@@ -64,15 +64,40 @@ body { background: var(--dark); color: var(--light); font-family: var(--font); o
 
 .scratch {
   position: absolute;
-  background: linear-gradient(90deg, transparent, rgba(80,50,30,0.6), transparent);
+  background: linear-gradient(90deg, transparent, rgba(60,30,10,0.7), rgba(80,50,30,0.5), transparent);
   border-radius: 2px;
   transform-origin: left center;
   opacity: 0;
+  transition: width 0.25s ease;
 }
-.scratch-1 { width: 0; height: 3px; top: 25%; left: 20%; transform: rotate(-15deg); }
-.scratch-2 { width: 0; height: 3px; top: 38%; left: 25%; transform: rotate(-8deg); }
-.scratch-3 { width: 0; height: 3px; top: 52%; left: 18%; transform: rotate(-20deg); }
-.scratch-4 { width: 0; height: 3px; top: 65%; left: 22%; transform: rotate(-5deg); }
+/* Groupe 1 — haut gauche */
+.scratch-1  { width: 0; height: 4px; top: 18%; left: 12%; transform: rotate(-18deg); }
+.scratch-2  { width: 0; height: 3px; top: 26%; left: 15%; transform: rotate(-10deg); }
+.scratch-3  { width: 0; height: 4px; top: 33%; left: 10%; transform: rotate(-22deg); }
+/* Groupe 2 — milieu */
+.scratch-4  { width: 0; height: 5px; top: 44%; left: 25%; transform: rotate(-8deg); }
+.scratch-5  { width: 0; height: 3px; top: 51%; left: 20%; transform: rotate(-14deg); }
+.scratch-6  { width: 0; height: 4px; top: 58%; left: 28%; transform: rotate(-5deg); }
+/* Groupe 3 — bas droite */
+.scratch-7  { width: 0; height: 4px; top: 40%; left: 45%; transform: rotate(-20deg); }
+.scratch-8  { width: 0; height: 3px; top: 50%; left: 48%; transform: rotate(-12deg); }
+.scratch-9  { width: 0; height: 5px; top: 60%; left: 42%; transform: rotate(-25deg); }
+.scratch-10 { width: 0; height: 3px; top: 68%; left: 50%; transform: rotate(-7deg); }
+
+/* Déchirure finale */
+.paper-rip {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg,
+    transparent 30%,
+    rgba(60,30,10,0.15) 45%,
+    transparent 46%,
+    rgba(60,30,10,0.1) 60%,
+    transparent 61%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.paper-rip.visible { opacity: 1; }
 
 .cat-paw {
   font-size: 4rem;
