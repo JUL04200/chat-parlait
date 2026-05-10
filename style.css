@@ -390,7 +390,21 @@ body { background: var(--dark); color: var(--light); font-family: var(--font); o
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
 }
-.section-sub { color: rgba(241,240,255,0.4); margin-top: 0.5rem; font-size: 0.9rem; }
+.section-sub {
+  color: var(--dark);
+  background: var(--purple-light);
+  display: inline-block;
+  padding: 0.35rem 1.1rem;
+  border-radius: 100px;
+  margin-top: 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  animation: hintPulse 1.8s ease-in-out infinite;
+}
+@keyframes hintPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(0.97); }
+}
 
 /* ===== REVEAL ===== */
 .reveal {
