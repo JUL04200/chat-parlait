@@ -581,6 +581,68 @@ body { background: var(--dark); color: var(--light); font-family: var(--font); o
 .theme-box p { font-size: 0.87rem; line-height: 1.7; color: rgba(241,240,255,0.6); }
 .theme-box strong { color: var(--purple-light); }
 
+/* ===== SECRETS ===== */
+.secrets-section { padding: 8rem 0; background: var(--dark); }
+
+.secrets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.secret-card {
+  background: linear-gradient(135deg, var(--dark3), var(--dark4));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.secret-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(124,58,237,0.08), transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
+}
+.secret-card:hover { border-color: rgba(124,58,237,0.5); transform: translateY(-6px); }
+.secret-card:hover::before { opacity: 1; }
+
+.secret-num {
+  font-family: var(--font-title);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(124,58,237,0.08);
+  position: absolute; top: 0.5rem; right: 1rem;
+  line-height: 1;
+}
+.secret-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.secret-card h3 {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purple-light);
+  margin-bottom: 0.7rem;
+}
+.secret-card p { font-size: 0.88rem; line-height: 1.75; color: rgba(241,240,255,0.65); }
+.secret-card strong { color: var(--light); }
+
+.secrets-footer {
+  text-align: center;
+  padding: 2rem;
+  border: 1px dashed rgba(124,58,237,0.25);
+  border-radius: var(--radius);
+  background: rgba(124,58,237,0.04);
+}
+.secrets-footer-icon { font-size: 2rem; margin-bottom: 0.8rem; animation: catBounce 1.5s ease infinite alternate; }
+.secrets-footer p {
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--purple-light);
+  font-style: italic;
+}
+
 /* ===== AVIS ===== */
 .avis-section { padding: 6rem 0; background: var(--dark); }
 .avis-card {
